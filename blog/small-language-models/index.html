@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Small Language Models May Be More Important Than We Think — Anwar Mithu</title>
+<meta name="description" content="Why smaller, locally deployable language models become much more capable when good system design gives them tools, feedback and clear constraints.">
+<link rel="canonical" href="https://anwar-mithu.github.io/blog/small-language-models/">
+<meta property="og:title" content="Small Language Models May Be More Important Than We Think — Anwar Mithu">
+<meta property="og:description" content="Why smaller, locally deployable language models become much more capable when good system design gives them tools, feedback and clear constraints.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://anwar-mithu.github.io/blog/small-language-models/">
+<meta property="og:image" content="https://anwar-mithu.github.io/assets/images/og-image.png">
+<meta name="theme-color" content="#070a0f">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="cursor-glow" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="header-progress" aria-hidden="true"></div>
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Anwar Mithu home"><span>Anwar</span><em>Mithu</em></a>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/#about">About</a><a href="/#skills">Skills</a><a href="/projects/">Projects</a><a href="/certificates/">Certificates</a><a href="/blog/">Blog</a><a href="/travel/">Travel</a><a href="/#contact">Contact</a></nav>
+    <div class="nav-social"><a class="icon-link" href="https://github.com/anwar-mithu" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .7A11.3 11.3 0 0 0 .7 12.3c0 5.1 3.2 9.4 7.7 10.9.6.1.8-.3.8-.6v-2.2c-3.1.7-3.8-1.4-3.8-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.3 1 .1-.8.4-1.3.7-1.6-2.5-.3-5.1-1.3-5.1-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3 0 0 1-.3 3.2 1.2a10.6 10.6 0 0 1 5.8 0C17.7 5 18.8 5.3 18.8 5.3c.6 1.5.2 2.7.1 3 .8.8 1.2 1.8 1.2 3.1 0 4.4-2.6 5.4-5.1 5.7.4.4.8 1.1.8 2.1v3.2c0 .4.2.7.8.6a11.6 11.6 0 0 0 7.7-10.9A11.4 11.4 0 0 0 12 .7Z"/></svg></a></div>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header><main id="main"><section class="article-hero"><div class="narrow"><div class="eyebrow">Artificial Intelligence</div><h1 class="reveal">Small Language Models May Be More Important Than We Think</h1><div class="article-meta"><span>September 29, 2026</span><span>3 min read</span></div></div></section><article class="article-content"><div class="narrow"><p>For the last several years, progress in artificial intelligence has often been associated with one idea: bigger models are better. More parameters, more training data and more computing power have repeatedly produced impressive results. But another direction is becoming increasingly important—the development of small language models.</p>
+<p>A small language model does not try to know everything. Instead, it can be designed to solve a narrower class of problems efficiently. That difference becomes important when we move from AI demonstrations to real software systems.</p>
+<p>Large cloud-hosted models are incredibly capable, but using them also introduces practical considerations. Applications may depend on an external provider, network connectivity and API availability. Every request may have a cost. Sensitive information may leave the local infrastructure. Response times can vary depending on network conditions and service load.</p>
+<p>Local models change some of these assumptions. A sufficiently capable smaller model can run on a workstation, laptop, private server or edge device. The application can therefore remain under the control of the organization operating it. This creates interesting possibilities for privacy-sensitive environments, internal enterprise tools and systems that need predictable infrastructure.</p>
+<h2>The model is only one part of the system</h2>
+<p>The most interesting question, however, is not whether a small model can compete with the largest model on every benchmark. It probably cannot. The more useful question is whether it can perform a specific task reliably when it is given the correct environment.</p>
+<p>Imagine an AI system that does not expect the model to memorize an entire database schema. Instead, the system provides a schema-retrieval tool. The model does not need to guess whether generated code works because another tool can execute it. If execution fails, the error is returned to the model and another attempt can be made.</p>
+<p>Suddenly, model size is only one component of the system. The surrounding engineering becomes equally important.</p>
+<p>This is one reason tool-using AI systems are so interesting. Instead of attempting to place every capability inside the model itself, we can build systems in which models interact with deterministic software components. A database should calculate database results. A search engine should retrieve documents. A compiler should validate code. An API should retrieve live information.</p>
+<p>The language model's role becomes reasoning about how these capabilities should be used. This approach can potentially make smaller models much more useful.</p>
+<h2>Evaluation has to become more practical</h2>
+<p>It also changes how AI engineers should evaluate models. Accuracy alone is not enough. We need to measure latency, resource consumption, error recovery, tool usage and reliability across multiple attempts.</p>
+<p>The future of AI may therefore involve both enormous general-purpose models and much smaller specialized models. For many real applications, the winning architecture may not be the largest possible model. It may be the smallest model that can reliably complete the job when combined with good software engineering.</p><p style="margin-top:55px"><a class="button" href="/blog/">← Back</a></p></div></article></main><footer class="site-footer">
+  <div class="container footer-inner">
+    <div><div class="footer-name">Md Anwarul Islam Mithu</div><div class="footer-meta">AI Engineer · Germany</div></div>
+    <div class="footer-links"><a href="https://github.com/anwar-mithu" target="_blank" rel="noopener">GitHub</a></div>
+    <div class="footer-meta">© 2026 Anwar Mithu.<br>Designed &amp; built for the web.</div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body></html>

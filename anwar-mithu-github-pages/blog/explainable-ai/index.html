@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explainable AI: Knowing the Prediction Is Not Always Enough — Anwar Mithu</title>
+<meta name="description" content="LIME and SHAP can help inspect model behavior, but explanations must be treated as evidence about the model—not automatic proof about the real world.">
+<link rel="canonical" href="https://anwar-mithu.github.io/blog/explainable-ai/">
+<meta property="og:title" content="Explainable AI: Knowing the Prediction Is Not Always Enough — Anwar Mithu">
+<meta property="og:description" content="LIME and SHAP can help inspect model behavior, but explanations must be treated as evidence about the model—not automatic proof about the real world.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://anwar-mithu.github.io/blog/explainable-ai/">
+<meta property="og:image" content="https://anwar-mithu.github.io/assets/images/og-image.png">
+<meta name="theme-color" content="#070a0f">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="cursor-glow" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="header-progress" aria-hidden="true"></div>
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Anwar Mithu home"><span>Anwar</span><em>Mithu</em></a>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/#about">About</a><a href="/#skills">Skills</a><a href="/projects/">Projects</a><a href="/certificates/">Certificates</a><a href="/blog/">Blog</a><a href="/travel/">Travel</a><a href="/#contact">Contact</a></nav>
+    <div class="nav-social"><a class="icon-link" href="https://github.com/anwar-mithu" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .7A11.3 11.3 0 0 0 .7 12.3c0 5.1 3.2 9.4 7.7 10.9.6.1.8-.3.8-.6v-2.2c-3.1.7-3.8-1.4-3.8-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.3 1 .1-.8.4-1.3.7-1.6-2.5-.3-5.1-1.3-5.1-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3 0 0 1-.3 3.2 1.2a10.6 10.6 0 0 1 5.8 0C17.7 5 18.8 5.3 18.8 5.3c.6 1.5.2 2.7.1 3 .8.8 1.2 1.8 1.2 3.1 0 4.4-2.6 5.4-5.1 5.7.4.4.8 1.1.8 2.1v3.2c0 .4.2.7.8.6a11.6 11.6 0 0 0 7.7-10.9A11.4 11.4 0 0 0 12 .7Z"/></svg></a></div>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header><main id="main"><section class="article-hero"><div class="narrow"><div class="eyebrow">Machine Learning</div><h1 class="reveal">Explainable AI: Knowing the Prediction Is Not Always Enough</h1><div class="article-meta"><span>September 29, 2026</span><span>2 min read</span></div></div></section><article class="article-content"><div class="narrow"><p>Machine-learning systems are often evaluated using numbers such as accuracy, precision, recall or error rates. Those metrics are important. But sometimes another question matters just as much: <strong>Why did the model make this prediction?</strong></p>
+<p>Imagine a model predicts that one product will sell better than another. A medical system identifies an unusual pattern. A financial model assigns a particular risk category. A business model predicts that a customer may leave.</p>
+<p>Knowing the prediction may not be enough. People often want to understand which factors influenced it. That is the problem explainable artificial intelligence attempts to address.</p>
+<h2>Two familiar approaches</h2>
+<p>Two widely known approaches are LIME and SHAP.</p>
+<p>LIME, or Local Interpretable Model-agnostic Explanations, attempts to explain an individual prediction by creating a simpler local approximation around that prediction. Instead of explaining the entire complex model, it asks a narrower question: what appears to be influencing the model in this particular situation?</p>
+<p>SHAP approaches explanations from a different mathematical foundation based on Shapley values from cooperative game theory. The basic idea is to estimate how much each feature contributes to moving a model's prediction away from a baseline.</p>
+<p>Both techniques can produce feature-level explanations, but an important lesson is that explanations themselves also need evaluation.</p>
+<p>If an explanation changes dramatically when almost nothing about the input changes, how much should we trust it? If two explanation methods identify very different important features, what does that tell us? And if a model is incorrect, a beautifully visualized explanation does not magically make the prediction correct.</p>
+<h2>Explanation is not causation</h2>
+<p>Explainability therefore should not become decoration. Its purpose is to help people investigate model behavior. It can be useful for debugging, discovering unexpected correlations, communicating results and identifying situations where a model may be relying on undesirable signals.</p>
+<p>There is also an important distinction between explaining model behavior and explaining reality. Suppose an explanation says that a certain feature strongly influenced a prediction. That tells us something about the model. It does not necessarily prove that the feature causes the real-world outcome.</p>
+<p>That distinction becomes particularly important when machine-learning systems influence decisions.</p>
+<p>As AI becomes integrated into more software products, engineers increasingly need to think about systems from three perspectives: What result did the system produce? How reliable is that result? And what evidence can we provide about how the system arrived there?</p>
+<p>AI systems should not only become more capable. Where possible, they should also become easier to inspect, evaluate and understand.</p><p style="margin-top:55px"><a class="button" href="/blog/">← Back</a></p></div></article></main><footer class="site-footer">
+  <div class="container footer-inner">
+    <div><div class="footer-name">Md Anwarul Islam Mithu</div><div class="footer-meta">AI Engineer · Germany</div></div>
+    <div class="footer-links"><a href="https://github.com/anwar-mithu" target="_blank" rel="noopener">GitHub</a></div>
+    <div class="footer-meta">© 2026 Anwar Mithu.<br>Designed &amp; built for the web.</div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body></html>
